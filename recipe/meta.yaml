@@ -1,5 +1,5 @@
 {% set name = "hpp-constraints" %}
-{% set version = "4.10.1" %}
+{% set version = "4.13.0" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b9dae192559927155f7804c05490053c8890bcec5fd75961ee7dd89fe1f023c2
+  sha256: 4113aa26bd1724e07563d1d5b9e6fa74468017476a79865aff5fc7d96746152c
   patches:
     - patches/rt_link_fix.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x') }}
@@ -25,16 +25,16 @@ requirements:
     - pkg-config
     - doxygen
   host:
-    - boost-cpp
+    - boost-cpp  1.74.0
     - tinyxml
-    - urdfdom
-    - assimp
+    - urdfdom  2.3.5
+    - assimp  5.2.3
     - octomap
-    - hpp-fcl
-    - hpp-util
-    - hpp-pinocchio
+    - hpp-fcl  1.8.1
+    - hpp-util  {{ version }}
+    - hpp-pinocchio  {{ version }}
   run:
-    - boost-cpp
+    - boost-cpp  1.74.0
     - tinyxml
 
 test:
@@ -48,7 +48,7 @@ about:
   home: https://github.com/humanoid-path-planner/{{ name }}
   license: LGPL-3.0-or-later
   license_file: COPYING
-  summary: '{{ name }} subpackage of Humanoid Path Planner suite'
+  summary: {{ name }} subpackage of Humanoid Path Planner suite
   description: |
     HPP (Humanoid Path Planner) is a collection of software packages implementing
     path planning functionalities for a humanoid robot. The core functionalities are well
@@ -60,3 +60,4 @@ about:
 extra:
   recipe-maintainers:
     - ymontmarin
+    - jcarpent
