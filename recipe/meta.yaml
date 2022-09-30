@@ -23,16 +23,16 @@ requirements:
     - pkg-config
     - doxygen
   host:
-    - boost-cpp  1.74.0
+    - boost-cpp
     - tinyxml
-    - urdfdom  2.3.5
-    - assimp  5.2.3
+    - urdfdom
+    - assimp
     - octomap
     - hpp-fcl  1.8.1
     - hpp-util  {{ version }}
     - hpp-pinocchio  {{ version }}
   run:
-    - boost-cpp  1.74.0
+    - boost-cpp
     - tinyxml
 
 test:
