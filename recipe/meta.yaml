@@ -1,5 +1,5 @@
 {% set name = "hpp-constraints" %}
-{% set version = "4.13.0" %}
+{% set version = "4.14.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,12 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4113aa26bd1724e07563d1d5b9e6fa74468017476a79865aff5fc7d96746152c
+  sha256: 2fad5bead892b6d5d44dd807a6475320f281f2a437267a3042773fa1af95fdd6
+  patches:
+    - patches/osx_fix_deprecated.patch  # [osx]
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x') }}
