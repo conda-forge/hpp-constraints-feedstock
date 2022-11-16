@@ -7,7 +7,7 @@ cmake .. \
       -DCMAKE_PREFIX_PATH=$PREFIX \
       -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_INSTALL_LIBDIR=lib \
-      -DUSE_QPOASES=FALSE
+      -DUSE_QPOASES=TRUE
 # Can be update when conda qpoases is available
 make -j${CPU_COUNT} 
 make install
