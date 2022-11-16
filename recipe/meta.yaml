@@ -9,7 +9,8 @@ source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: 2fad5bead892b6d5d44dd807a6475320f281f2a437267a3042773fa1af95fdd6
   patches:
-    - patches/osx_fix_deprecated.patch  # [osx]
+    - patches/osx_fix_deprecated.patch     # [osx]
+    - patches/osx_fix_qpoases_cmake.patch  # [osx]
 
 build:
   number: 2
