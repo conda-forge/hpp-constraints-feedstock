@@ -1,0 +1,24 @@
+From a409a7e410dfdb8c9445a792ad7c75df1dd4303e Mon Sep 17 00:00:00 2001
+From: Yann de Mont-Marin <yann.montmarin@gmail.com>
+Date: Wed, 16 Nov 2022 18:03:49 +0100
+Subject: [PATCH] Make FindqpOASES compatible with other distros than linux
+
+---
+ find-external/qpOASES/FindqpOASES.cmake | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git find-external/qpOASES/FindqpOASES.cmake find-external/qpOASES/FindqpOASES.cmake
+index 4cca51b..5bac48a 100644
+--- cmake/find-external/qpOASES/FindqpOASES.cmake
++++ cmake/find-external/qpOASES/FindqpOASES.cmake
+@@ -28,7 +28,7 @@ find_path(
+   PATHS ${qpOASES_PREFIX} ${qpOASES_PREFIX}/include)
+ find_library(
+   qpOASES_LIBRARY
+-  NAMES libqpOASES.so
++  NAMES libqpOASES.so libqpOASES.dylib qpOASES.lib
+   PATHS ${qpOASES_PREFIX} ${qpOASES_PREFIX}/lib)
+ 
+ set(qpOASES_LIBRARIES ${qpOASES_LIBRARY})
+-- 
+2.25.1
