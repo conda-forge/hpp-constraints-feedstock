@@ -16,7 +16,7 @@ index 4cca51b..5bac48a 100644
  find_library(
    qpOASES_LIBRARY
 -  NAMES libqpOASES.so
-+  NAMES libqpOASES
++  NAMES qpOASES
    PATHS ${qpOASES_PREFIX} ${qpOASES_PREFIX}/lib)
  
  set(qpOASES_LIBRARIES ${qpOASES_LIBRARY})
