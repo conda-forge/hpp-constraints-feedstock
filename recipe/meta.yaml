@@ -1,5 +1,5 @@
 {% set name = "hpp-constraints" %}
-{% set version = "5.0.0" %}
+{% set version = "5.1.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4eb04e9a824f2d2df9573292384d2f701a66c394cf94f3b89719efd5d8990949
+  sha256: 626d3ca0a6e4f64c430db5baeebc27e14c71c0fa553438cd92c30b2ff7397a1b
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x.x') }}
@@ -45,8 +45,8 @@ test:
 
 about:
   home: https://github.com/humanoid-path-planner/{{ name }}
-  license: LGPL-3.0-or-later
-  license_file: COPYING
+  license: BSD-2-Clause
+  license_file: LICENSE
   summary: {{ name }} subpackage of Humanoid Path Planner suite
   description: |
     HPP (Humanoid Path Planner) is a collection of software packages implementing
