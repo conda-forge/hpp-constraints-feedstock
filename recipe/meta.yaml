@@ -25,6 +25,8 @@ requirements:
     - doxygen
   host:
     - libboost-devel
+    - qhull
+    - qhull-static
     - tinyxml
     - urdfdom
     - assimp
@@ -35,6 +37,8 @@ requirements:
     - hpp-pinocchio  {{ version }}
   run:
     - tinyxml
+    - qhull
+    - qhull-static
 
 test:
   requires:
