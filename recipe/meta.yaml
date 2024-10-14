@@ -1,5 +1,5 @@
 {% set name = "hpp-constraints" %}
-{% set version = "5.1.0" %}
+{% set version = "5.2.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 626d3ca0a6e4f64c430db5baeebc27e14c71c0fa553438cd92c30b2ff7397a1b
+  sha256: 1bddd84daccb0257d0a6bd73e5b1c42835880f17686b6fb2e5839a21140ca040
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x.x') }}
