@@ -1,16 +1,16 @@
 {% set name = "hpp-constraints" %}
-{% set version = "7.0.0" %}
+{% set version = "8.0.0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://github.com/humanoid-path-planner/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4c09ceee3cd4ceca33265ebafbbfe7e7a906f9c9dfca9807c4c5c789e85665a4
+  url: https://github.com/humanoid-path-planner/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: a59327f59b20004daea49217484ca4ca3670aea1701dd201e07786c47a104ec9
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name|lower, max_pin='x.x.x') }}
